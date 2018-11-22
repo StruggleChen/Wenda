@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<pre>
+    ${value1}
+    The colors are
+    <#list colors>
+        <ul>
+            <#items as color>
+                <li><@render_color index=color?counter color=color />
+            </#items>
+        </ul>
+    </#list>
+        <#list users>
+        <ul>
+            <#items as user>
+                <li>${user.name} ${user.age}
+            </#items>
+        </ul>
+    </#list>
+    <#assign title = "hello">
+    <#include "/header.html">
+        <#macro render_color index color>
+            Color Render Macro ${index}, ${color}
+        </#macro>
+</pre>
+</body>
+</html>
